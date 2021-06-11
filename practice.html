@@ -199,9 +199,68 @@
 
 // console.log(arr.concat("1"))
 
+// console.log(hoi1);
+// function hoi1() { return "hoi1 : 함수 호이스팅 입니다."; }
+// var hoi1 = "hoi1 : 변수 호이스팅 입니다.";
+// console.log(hoi1);
+
+// // 변수 먼저 선언
+// console.log(hoi2);
+// var hoi2 = "hoi2 : 변수 호이스팅 입니다.";
+// function hoi2() { return "hoi2 : 함수 호이스팅 입니다."; }
+// // console.log(hoi2);
+
+//       function User (name, age){
+//           this.name = name;
+//           this.age = age;
+//           this.sayName = function(){
+//               console.log(this.name)
+//           }
+//       }
+//       let user1 = new User('mike',30);
+//       user1.sayName();
+//       console.log(user1)
 
 
 
+
+/*
+호이스팅 : 모든 선언들을 가장 위에서 읽는 현상 
+        -변수 : var / let / const
+          var는 전역변수이기에 가능 
+          let / const 는 TDZ(Temporal Dead Zone) 때문에 호이스팅은 되지만 읽히지 않음
+            TDZ : 일종의 사각지대로 스코프 내의 구간 / 
+        - 함수 : 선언문 / 표현식
+          선언문 : function name (){ ... }  -> 호이스팅이 실행되어 가장 위에 위치하여 실행 
+          표현식 : let name = function (){ ... } -> 호이스팅이 되지만 선언문은 선언만 된 상태
+        - 우선순위는 변수의 호이스팅이 먼저 함수의 호이스팅이 나중에 이루어져 값은 함수의 내용이 나오게 된다
+
+변수 : 선언 / 초기화 / 할당의 순서로 생성
+    var : 선언과 초기화 단계가 동시에 일어남 / 함수 스코프 : 전역변수 //예외로 함수 내부에서 var를 쓰면 함수 밖에서는 사용 못함
+    let : 선언과 초기화 단계가 각각 일어나 그 사이의 지점이 TDZ (TDZ 때문에 호이스팅 되지 않아보임) / 블록스코프 ( 스코프 내에서만 알아볼수 있음 : 지역변수)
+    const : 선언 +초기화 + 할당이 동일한 위치에서 실행 / 블록 스코프
+
+생성자 함수
+
+    객체 생성 방법 : 객체 리터럴 / 생성자 함수
+      객체 리터럴 : 
+      let user = {
+          nmae: "mike",
+          age : 30,
+      }
+      생성자 함수 : 생성자 함수를 알아보기위해 첫글자는 대문자로 사용 / 비슷한 형태의 객체를 만들때 사용 / 훨씬 빠르고 일관성있게 생성
+      function User (name, age){
+          this.name = name;
+          this.age = age;
+      }
+      let user1 = new User('mike',30);
+      let user2 = new User('jane',20);
+  
+        new 함수명()을 사용하면 this={ } 빈객체를 생성 -> name과 age의 property를 추가 -> this를 반환
+
+
+
+*/
 
 
     </script>
