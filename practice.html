@@ -256,6 +256,73 @@
     // }
 
 
+//     let list = [
+//         "01. 들어가며",
+//         "02. js의 역사",
+//         "03. 자료형",
+//         "04. 함수",
+//         "05. 배열"
+
+//     ];
+
+//     let newList = [];
+
+//     for(let value of list){
+//         newList.push(value.substring(4))
+//     }
+// console.log(newList)
+
+
+
+
+// let arr = [5,15,6,82];
+
+// let result = arr.sort((a,b)=>{
+//     return a-b;
+// });
+// console.log(result)
+// let result = 0;
+// arr.forEach((value)=>{
+//     result += value
+// })
+// console.log(result)
+// let result = arr.reduce((prev,cur)=>{
+//     return prev + cur;
+// },0)
+// console.log(result)
+
+// let list = [
+//     {name:"mike", age:30},
+//     {name:"tom", age:10},
+//     {name:"jane", age:27}
+// ]
+
+// let result = list.reduce((prev, cur) => {
+//     if(cur.age >19){
+//         prev.push(cur.name);
+
+//     }
+//     return prev;
+// })
+// let result = list.reduce((prev, cur) =>{
+//     if (cur.age > 19){
+//         prev.push(cur.name);
+//     }
+//     return prev;
+// },0)
+// console.log(result)
+// let result = list.reduce((prev, cur)=>{
+//     if(cur.age >19){
+//         prev += cur.age
+//         console.log(prev)
+//     }
+//     return prev ;
+// },0)
+
+
+// console.log(result)
+
+
 
 /*
 호이스팅 : 모든 선언들을 가장 위에서 읽는 현상 
@@ -331,23 +398,67 @@ Symbol : 유일한 식별자를 만들때 사용 (유일성 보장)
         id1 === id2; -> true
         - Symbol.keyfor(id1): Symbol키를 가져오고 있을때 사용
 
+Number : 
+    toString(숫자) : 숫자 진수로 변경
+
+Math : 
+    Math.ceil(): 올림
+    Math.floor() : 내림 
+    Math.round() : 반올림
+    Math.random() : 임의의 수를 뽑음
+    Math.max() : 최대값
+    Math.min() : 최소값
+    Math.abs() : 절대값
+    Math.pow() : 제곱수
+    Math.sqrt() : 제곱
+    변수.toFixed(자리수) : 자리수+1에서 반올림 ( 문자열로 반환 )
+    isNaN() : NaN인지 아닌지 확인
+    parseInt() : 숫자까지만 반환
+    parseFloat() : 
+
+문자열 : '' / "" / `` 로 사용
+    toUpperCase()
+    toLowerCase()
+    indexOf()
+    slice(n,m) : n부터 m-1까지 반환
+    substring(n,m) : n과 m사이를 반환
+    substr(n,m) : n부터 m개를 반환
+    trim() : 앞과 뒤의 공백 제거
+    repeat(n) : 문자열의 n번 반복
+    
+    문자열 비교 : a < z / A < a
+
+배열 : 
+
+    arr.splice(n,m,x,x,...) : n부터 m개 지우기(x로 추가) / 삭제된 요소 반환
+    arr.slice(n,m) : n부터 m 전까지 반환
+    arr.concat(arr2,arr3) : arr에 arr2,3을 합쳐서 반환
+    arr.indexOf() : 있는지 확인하여 자리수를 나타냄
+    arr.includes() : 찾아내기
+    arr.find(fn) : 찾아내기 (함수)(해당하는 첫번째만 반환) / 있으면 true , 없으면 undefine
+    arr.filter(fn) : find와 동일 (해당하는것들을 배열로 만들어 반환)
+    arr.reverse() : 역순으로 재정렬
+    arr.map(fn) : 특정기능을 수행하고 새로운 배열로 반환
+    arr.join() : 배열을 문자열로 저장 
+    
+    arr.forEach(function (item,index,arr){ ... }) : 
+        ex) 
+            let arr = ["mike", "tom", "jane"]
+            arr.forEach((item, index)=>{
+                console.log(item)  --> "mike", "tom", "jane"
+            })
+
+    arr.sort(fn) : 배열 재정렬 
+    arr.reduce()
+
+구조 분해 할당 : 객체나 배열의 속성을 분해해 그 값을 변수에 담는 표현식
+    ex)
+        let [x, y] = [1,2]
+        
 
 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
