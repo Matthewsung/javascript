@@ -323,6 +323,41 @@
 // console.log(result)
 
 
+// const Bmw = function(color){
+//     const c = color;
+//     this.getColor = function(){
+//         console.log(c);
+//     };
+// };
+// const x5 = new Bmw("red")
+
+// x5.getColor();
+
+// class Food {
+//   constructor(name) {
+//     this.name = name;
+//     this.brands = [];
+//   }
+//   addBrand(brand) {
+//     this.brands.push(brand)
+//   }
+//   print() {
+//     console.log(`${this.name}을/를 파는 음식점들:`)
+//     console.log(this.brands.join(', '));
+//   }
+// }
+
+// const pizza = new Food('피자');
+// pizza.addBrand('피자헛');
+// pizza.addBrand('도미노 피자');
+
+// const chicken = new Food('치킨');
+// chicken.addBrand('굽네치킨');
+// chicken.addBrand('BBQ');
+
+// pizza.print()
+// chicken.print();
+
 
 /*
 호이스팅 : 모든 선언들을 가장 위에서 읽는 현상 
@@ -455,9 +490,37 @@ Math :
     ex)
         let [x, y] = [1,2]
         
+나머지 매개변수(...), 전개 구문 (...)
+    arguments : 함수로 넘어온 인수에 접근
+    나머지 매개변수 : 정해지지 않은 인수의 개수를 배열로 나타냄
+    
+클로져 : 함수와 렉시컬 환경의 조합 / 함수가 생성될 당시의 외부 변수를 기억하여 생성 이후에도 계속 접근 가능
 
+call / apply / bind : 함수에서 this 값을 가져올때 사용
+    call(매개변수) : 매개변수를 this로 사용
+        ex) 
+        let mike = { name : "mike"};
+        function showName (){ console.log(this.name)};
+        showName() --> 값 없음;
+        showName.call(mike) --> "mike"
+    apply([매개변수]) : 매겨변수를 배열로 받는걸 제외하고 call과 동일
+    bind : this 값을 영구적으로 바꿀수 있다.
 
+상속 / prototype
 
+class : 
+    ex)
+        class User2{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            showName(){---> prototype에 저장됨
+                console.log(this.name)
+            }
+        }
+    extends : 상속 
+    super : 부모에 사용된 함수 자식도 사용 가능(overriding)
 */
 
 
