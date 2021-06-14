@@ -525,10 +525,30 @@ class :
 
 
 
+// const purpleCuteSlime = {
+//   name: '슬라임',
+//   attribute: 'cute',
+//   color: 'purple'
+// };
 
+// const { color, ...rest } = purpleCuteSlime;
+// console.log(color);
+// console.log(rest);
+// const numbers = [0, 1, 2, 3, 4, 5, 6];
 
+// const [one, ...rest] = numbers;
 
+// console.log(one);
+// console.log(rest);
 
+function max(...rest) {
+    let tmp = Math.max(...rest)
+    console.log(tmp)
+
+    return rest;
+}
+
+const result = max(1, 2, 3, 4, 10, 5, 6, 7);
 
 
     </script>
