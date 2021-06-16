@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            background: rgb(31, 31, 146);
+        }
+        .w_950{
+            width: 950px;
+            margin: 0 auto;
+        }
+        .logo{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            padding: 100px;
+        }
+        .menu_ul{
+            overflow: hidden;
+        }
+        .menu_li{
+            /* width: 100px; */
+            height: 100px;
+            line-height: 60px;
+            width: calc((100% - (20px * 5)) / 6);
+            padding: 20px;
+            margin-right: 20px;
+            box-sizing: border-box;
+            float: left;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .menu_li:last-child{
+            margin-right: 0;
+        }
+        .menu_li:nth-child(4){
+            background: blue;
+        }
+        .menu_li:nth-child(5){
+            background: yellow;
+        }
+        .menu_li:nth-child(6){
+            background: pink;
+        }
+        .menu_li:hover {
+            transform: scale(1.2);
+        }
+        img{
+            width: 100%;
+        }
+        .item_box{
+            width: 100%;
+            height: 80px;
+            margin-top: 100px;
+        }
+        .item{
+            width: 100%;
+            height: 80px;
+            background: #fff;
+            position: relative;
+        }
+        .item img{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            left: 10%;
+            top:50%;
+            transform: translateY(-50%);
+
+        }
+        .name{
+            height: 100%;
+            line-height: 80px;
+            font-size: 30px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="w_950">
+            <div class="logo">
+                <img src="img/logo.png" alt="로고">
+            </div>
+            <ul class="menu_ul">
+                <li class="menu_li">
+                    <img src="img/blue_t.png" alt="">
+                </li>
+                <li class="menu_li">
+                    <img src="img/blue_p.png" alt="">
+                </li>
+                <li class="menu_li">
+                    <img src="img/blue_s.png" alt="">
+                </li>
+                <li class="menu_li">
+                    Blue
+                </li>
+                <li class="menu_li">
+                    Yellow
+                </li>
+                <li class="menu_li">
+                    Pink
+                </li>
+            </ul>
+            <div class="item_box">
+                <!-- <div class="item">
+                    <img src="img/blue_p.png" alt="">
+                    <div class="name">바지</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // function Make_list (url,type,color) {
+        //     this.url=url,
+        //     this.type=type,
+        //     this.color=color
+        // }
+        // const item1 = new Make_list("blue_t.png","t-shirt","blue");
+        // const item2 = new Make_list("blue_p.png","pants","blue")
+        // const item3 = new Make_list("blue_s.png","shirt","blue")
+        // const item4 = new Make_list("pink_t.png","t-shirt","pink")
+        // const item5 = new Make_list("pink_t.png","pants","pink")
+        // const item6 = new Make_list("pink_t.png","shirt","pink")
+        // const item7 = new Make_list("yellow_t.png","t-shirt","yellow")
+        // const item8 = new Make_list("yellow_t.png","pants","yellow")
+        // const item9 = new Make_list("yellow_t.png","shirt","yellow")
+
+        // console.log(item1)
+
+        const item_list = [
+            {url:"blue_t.png",type:"t-shirt",color:"blue"},
+            {url:"blue_p.png",type:"pants",color:"blue"},
+            {url:"blue_s.png",type:"shirt",color:"blue"},
+            {url:"pink_t.png",type:"t-shirt",color:"pink"},
+            {url:"pink_t.png",type:"pants",color:"pink"},
+            {url:"pink_t.png",type:"shirt",color:"pink"},
+            {url:"yellow_t.png",type:"t-shirt",color:"yellow"},
+            {url:"yellow_t.png",type:"pants",color:"yellow"},
+            {url:"yellow_t.png",type:"shirt",color:"yellow"},
+            
+        ];
+        // for(let i =0; i<9;i++){
+        //     list.push()
+
+        // }
+
+        const item_box = document.querySelector('.item_box')
+        for(let i=0; i<item_list.length;i++){
+            let list = "";
+            list = `<div class="item">
+                        <img src="img/${item_list.url}" alt="">
+                        <div class="name">바지</div>
+                    </div>`
+            item_box.innerHTML= list        }
+
+
+
+
+    </script>
+</body>
+</html>
