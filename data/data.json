@@ -1,0 +1,16 @@
+{
+    "item":[
+        {"url":"blue_t.png","type":"t-shirt","color":"blue"},
+        {"url":"blue_p.png","type":"pants","color":"blue"},
+        {"url":"blue_s.png","type":"shirt","color":"blue"},
+        {"url":"pink_t.png","type":"t-shirt","color":"pink"},
+        {"url":"pink_t.png","type":"pants","color":"pink"},
+        {"url":"pink_t.png","type":"shirt","color":"pink"},
+        {"url":"yellow_t.png","type":"t-shirt","color":"yellow"},
+        {"url":"yellow_t.png","type":"pants","color":"yellow"},
+        {"url":"yellow_t.png","type":"shirt","color":"yellow"}
+    ]
+}
+
+
+
