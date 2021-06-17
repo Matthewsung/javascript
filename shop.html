@@ -13,7 +13,7 @@
         }
         .wrap{
             width: 100%;
-            height: 100vh;
+            height: 100%;
             background: rgb(31, 31, 146);
         }
         .w_950{
@@ -62,13 +62,13 @@
         }
         .item_box{
             width: 100%;
-            height: 80px;
             margin-top: 100px;
         }
         .item{
             width: 100%;
             height: 80px;
             background: #fff;
+            margin-top: 20px;
             position: relative;
         }
         .item img{
@@ -100,21 +100,21 @@
             </div>
             <ul class="menu_ul">
                 <li class="menu_li">
-                    <img src="img/blue_t.png" alt="">
+                    <img src="img/blue_t.png" alt="" data-key="type" data-value="tshirt">
                 </li>
                 <li class="menu_li">
-                    <img src="img/blue_p.png" alt="">
+                    <img src="img/blue_p.png" alt=""data-key="type" data-value="pants">
                 </li>
                 <li class="menu_li">
-                    <img src="img/blue_s.png" alt="">
+                    <img src="img/blue_s.png" alt=""data-key="type" data-value="skirt">
                 </li>
-                <li class="menu_li">
+                <li class="menu_li"data-key="color" data-value="blue">
                     Blue
                 </li>
-                <li class="menu_li">
+                <li class="menu_li" data-key="color" data-value="yellow">
                     Yellow
                 </li>
-                <li class="menu_li">
+                <li class="menu_li"data-key="color" data-value="pink">
                     Pink
                 </li>
             </ul>
@@ -128,11 +128,85 @@
     </div>
 
     <script>
-        function loadData(){
-            return fetch('dada/data.json')
-            .then(response=>console.log(response))
+        function getItems(){
+            return fetch('data/data.json')
+            .then(response => response.json())
+            .then(json=>json.items)
         }
-        loadData()
+        function createHTMLString(items){
+            return `
+                <div class="item">
+                    <img src="${items.url}" alt="">
+                    <div class="name">${items.type}</div>
+                </div>`
+        }
+        function inputItem (items){
+            const container = document.querySelector('.item_box')
+            container.innerHTML = items.map(item => createHTMLString(item)).join('');
+        }
+        function clickEvent(items){
+            const logo = document.querySelector('.logo');
+            const menu_ul = document.querySelector('.menu_ul')
+            logo.addEventListener('click', () => inputItem(items))
+            menu_ul.addEventListener('click',(event)=>onButtonClick(event,items))
+        }
+        function onButtonClick(evemt,items) { 
+            const data = event.target.dataset;
+            const key = data.key;
+            const value = data.value;
+            if(key ==null||value==null){
+                return ;
+            }
+            inputItem(items.filter(item=>item[key]==value))
+        }
+        getItems()
+        .then(items => {
+            inputItem(items),
+            clickEvent(items)
+        })
+        .catch(console.log)
+
+
+
+        // function loadItems(){
+        //     return fetch('data/data.json')
+        //     .then(response => response.json())
+        //     .then(json => json.items)
+        // }
+        // function displayItems(items){
+        //     const container = document.querySelector('.item_box')
+        //     container.innerHTML = items.map(item=> createHTMLString(item)).join('');
+        // }
+        // function createHTMLString(items){
+        //     return `
+        //         <div class="item">
+        //              <img src="${items.url}" alt="">
+        //              <div class="name">${items.type}</div>
+        //          </div>`
+        // }
+        // function setEventListeners(items){
+        //     const logo = document.querySelector('.logo')
+        //     const menu_ul = document.querySelector('.menu_ul')
+        //     logo.addEventListener('click',()=> displayItems(items));
+        //     menu_ul.addEventListener('click',(event) =>onButtonClick(event,items));
+        // }
+        // function onButtonClick(event,items){
+        //     const data = event.target.dataset;
+        //     const key = data.key;
+        //     const value = data.value;
+        //     if(key ==null|| value == null){
+        //         return ;
+        //     }
+        //     displayItems(items.filter(item => item[key] == value))
+        // }
+        // loadItems()
+        // .then(items => {
+        //     displayItems(items);
+        //     setEventListeners(items);
+        // })
+        // .catch(console.log)
+
+
         // const item_box = document.querySelector('.item_box')
         // for(let i=0; i<item_list.length;i++){
         //     let list = "";

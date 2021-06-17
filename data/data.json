@@ -1,14 +1,14 @@
 {
-    "item":[
-        {"url":"blue_t.png","type":"t-shirt","color":"blue"},
-        {"url":"blue_p.png","type":"pants","color":"blue"},
-        {"url":"blue_s.png","type":"shirt","color":"blue"},
-        {"url":"pink_t.png","type":"t-shirt","color":"pink"},
-        {"url":"pink_t.png","type":"pants","color":"pink"},
-        {"url":"pink_t.png","type":"shirt","color":"pink"},
-        {"url":"yellow_t.png","type":"t-shirt","color":"yellow"},
-        {"url":"yellow_t.png","type":"pants","color":"yellow"},
-        {"url":"yellow_t.png","type":"shirt","color":"yellow"}
+    "items":[
+        {"url":"../img/blue_t.png","type":"tshirt","color":"blue"},
+        {"url":"../img/blue_p.png","type":"pants","color":"blue"},
+        {"url":"../img/blue_s.png","type":"skirt","color":"blue"},
+        {"url":"../img/pink_t.png","type":"tshirt","color":"pink"},
+        {"url":"../img/pink_p.png","type":"pants","color":"pink"},
+        {"url":"../img/pink_s.png","type":"skirt","color":"pink"},
+        {"url":"../img/yellow_t.png","type":"tshirt","color":"yellow"},
+        {"url":"../img/yellow_p.png","type":"pants","color":"yellow"},
+        {"url":"../img/yellow_s.png","type":"skirt","color":"yellow"}
     ]
 }
 
