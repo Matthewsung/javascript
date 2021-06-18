@@ -30,8 +30,12 @@ input{
 }
 .name_box, .todolist_box{
   width: 50%;
-  height: 30px;
   margin: 50px auto;
+}
+.user{
+  width: 100%;
+    color: #fff;
+    font-size: 35px;
 }
 .todolist{
   width: 80%;
@@ -42,4 +46,7 @@ input{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.close{
+  cursor: pointer;
 }
