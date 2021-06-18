@@ -128,43 +128,80 @@
     </div>
 
     <script>
-        function getItems(){
+
+        function getItem() {
             return fetch('data/data.json')
             .then(response => response.json())
-            .then(json=>json.items)
+            .then(json => json.items)
         }
-        function createHTMLString(items){
+        function getInputHTML(items){
+            const item_box = document.querySelector('.item_box')
+            item_box.innerHTML =items.map(item=> selectedList(item)).join('') ;
+        }
+        function selectedList (items){
             return `
                 <div class="item">
                     <img src="${items.url}" alt="">
-                    <div class="name">${items.type}</div>
-                </div>`
+                    <div class="name">${items.type} , ${items.color}</div>
+                </div> 
+            `
         }
-        function inputItem (items){
-            const container = document.querySelector('.item_box')
-            container.innerHTML = items.map(item => createHTMLString(item)).join('');
+        function onButtonEvent(items){
+            const logo = document.querySelector('.logo')
+            logo.addEventListener('click', ()=>getInputHTML(items))
+            const menu = document.querySelector('.menu_ul')
+            menu.addEventListener('click',(event)=>chooseList(event,items))
         }
-        function clickEvent(items){
-            const logo = document.querySelector('.logo');
-            const menu_ul = document.querySelector('.menu_ul')
-            logo.addEventListener('click', () => inputItem(items))
-            menu_ul.addEventListener('click',(event)=>onButtonClick(event,items))
-        }
-        function onButtonClick(evemt,items) { 
-            const data = event.target.dataset;
+        function chooseList(event,items){
+            const data = event.target.dataset
             const key = data.key;
             const value = data.value;
-            if(key ==null||value==null){
-                return ;
-            }
-            inputItem(items.filter(item=>item[key]==value))
+            getInputHTML(items.filter(item=>item[key]==value))
         }
-        getItems()
-        .then(items => {
-            inputItem(items),
-            clickEvent(items)
+        getItem()
+        .then((items) => {
+            getInputHTML(items),
+            onButtonEvent(items)
         })
-        .catch(console.log)
+
+
+        // function getItems(){
+        //     return fetch('data/data.json')
+        //     .then(response => response.json())
+        //     .then(json=>json.items)
+        // }
+        // function createHTMLString(items){
+        //     return `
+        //         <div class="item">
+        //             <img src="${items.url}" alt="">
+        //             <div class="name">${items.type}</div>
+        //         </div>`
+        // }
+        // function inputItem (items){
+        //     const container = document.querySelector('.item_box')
+        //     container.innerHTML = items.map(item => createHTMLString(item)).join('');
+        // }
+        // function clickEvent(items){
+        //     const logo = document.querySelector('.logo');
+        //     const menu_ul = document.querySelector('.menu_ul')
+        //     logo.addEventListener('click', () => inputItem(items))
+        //     menu_ul.addEventListener('click',(event)=>onButtonClick(event,items))
+        // }
+        // function onButtonClick(evemt,items) { 
+        //     const data = event.target.dataset;
+        //     const key = data.key;
+        //     const value = data.value;
+        //     if(key ==null||value==null){
+        //         return ;
+        //     }
+        //     inputItem(items.filter(item=>item[key]==value))
+        // }
+        // getItems()
+        // .then(items => {
+        //     inputItem(items),
+        //     clickEvent(items)
+        // })
+        // .catch(console.log)
 
 
 
@@ -216,7 +253,7 @@
         //             </div>`
         //     item_box.innerHTML= list        }
 
-
+        
 
 
     </script>
