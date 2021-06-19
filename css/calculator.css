@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  /* background: black; */
+  /* color: #fff; */
+  box-sizing: border-box;
+}
+.cal{
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  border: 1px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.cal_val{
+  font-size: 30px;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.btn:nth-child(2){
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.btn:last-child{
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
